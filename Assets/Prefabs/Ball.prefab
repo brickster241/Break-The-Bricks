@@ -136,7 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2593fe981fbe641b81dee2135e7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BALL_HOLDER: {fileID: 0}
   X_BOUND: 20
   direction: {x: 0, y: 0}
   isTurnComplete: 0

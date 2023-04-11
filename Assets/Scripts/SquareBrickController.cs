@@ -31,16 +31,9 @@ public class SquareBrickController : MonoBehaviour
     }
 
     IEnumerator DisplayColor() {
-        Color original = outlineSR.color;
-        Debug.Log("Outline Original : " + original);
-        Color temp = outlineSR.color;
-        temp.r = 0.9f;
-        temp.b = 0.9f;
-        Debug.Log("Temp Color : " + temp);
-        outlineSR.color = temp;
+        outlineSR.color = new Color(0.9f, 1f, 0.9f);
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("Original Color After Procedure : " + original);
-        outlineSR.color = original;
+        outlineSR.color = new Color(0.706f, 1f, 0.706f);   
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

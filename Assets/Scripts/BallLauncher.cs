@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class BallLauncher : MonoBehaviour
 {
+    [SerializeField] Transform ArrowHead;
     [SerializeField] Camera mainCamera;
     [SerializeField] int NumberOfBalls;
     [SerializeField] GameObject[] balls;
@@ -31,23 +32,28 @@ public class BallLauncher : MonoBehaviour
     private void Update() {
         setBallsFetched();
         Mouse mouse = Mouse.current;
-        if (mouse.leftButton.wasPressedThisFrame && allBallsFetched) {
-            Vector3 mousePosition = mouse.position.ReadValue();
-            Vector3 worldPos = mainCamera.ScreenToWorldPoint(mousePosition);
-            worldPos.z = 0f;
-            StartCoroutine(setDirectionOfBalls(new Vector2(worldPos.x, worldPos.y)));
+        Vector3 mousePosition = mouse.position.ReadValue();
+        Vector3 worldPos = mainCamera.ScreenToWorldPoint(mousePosition);
+        worldPos.z = 0f;
+        Vector2 direction = new Vector2(worldPos.x - transform.position.x, worldPos.y - transform.position.y).normalized;
+        Vector3 position = ArrowHead.localPosition;
+        ArrowHead.rotation = Quaternion.Euler(0, 0, Vector2.Angle(Vector2.right, direction));
+        position.x = direction.x * 2;
+        position.y = direction.y * 2;
+        ArrowHead.localPosition = position;  
+        if (mouse.leftButton.wasPressedThisFrame && allBallsFetched && ArrowHead.rotation.z > 0) {
+            StartCoroutine(setDirectionOfBalls(direction));
         }
     }
 
-    IEnumerator setDirectionOfBalls(Vector2 mouse_pos) {
+    IEnumerator setDirectionOfBalls(Vector2 direction) {
         allBallsFetched = false;
-        Vector2 direction = (mouse_pos - new Vector2(transform.position.x, transform.position.y)).normalized;
         Debug.Log(direction);
         foreach (GameObject ballMovt in balls)
         {
             BallMovement mvt = ballMovt.GetComponent<BallMovement>();
             mvt.startMovement(direction);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
