@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    [SerializeField] Transform BALL_HOLDER;
+    Transform BALL_HOLDER;
     [SerializeField] float X_BOUND;
     [SerializeField] Vector2 direction;
-    [SerializeField] bool isTurnComplete;
+    public bool isTurnComplete = true;
     [SerializeField] float speed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        ResetBall();
+    
+
+    public void SetHolder(Transform holder_transform) {
+        BALL_HOLDER = holder_transform;
     }
 
-    void ResetBall() {
+    public void ResetBall() {
         isTurnComplete = true;
         transform.position = BALL_HOLDER.position;
+    }
+
+    public void startMovement(Vector2 direction) {
+        this.direction = direction;
+        isTurnComplete = false;
     }
 
     private void FixedUpdate() {
@@ -56,17 +61,10 @@ public class BallMovement : MonoBehaviour
         } else if (other.gameObject.CompareTag("Square-Brick")) {
             // HANDLE SQUARE BRICK
             HandleSquareBrickCollision(other.gameObject);
-        } else if (other.gameObject.CompareTag("Circle-Brick")) {
-            // HANDLE CIRCULAR BRICK
-            HandleCircularBrickCollision(other.gameObject);
         } else if (other.gameObject.CompareTag("Ground")) {
             // HANDLE GROUND
             StartCoroutine(BackToHolder());
         }
-    }
-
-    void HandleCircularBrickCollision(GameObject brick) {
-        // UPDATE DIRECTION VECTOR
     }
 
     void HandleSquareBrickCollision(GameObject brick) {

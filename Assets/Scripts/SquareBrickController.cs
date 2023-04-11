@@ -32,11 +32,14 @@ public class SquareBrickController : MonoBehaviour
 
     IEnumerator DisplayColor() {
         Color original = outlineSR.color;
-        Color temp = original;
+        Debug.Log("Outline Original : " + original);
+        Color temp = outlineSR.color;
         temp.r = 0.9f;
         temp.b = 0.9f;
+        Debug.Log("Temp Color : " + temp);
         outlineSR.color = temp;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log("Original Color After Procedure : " + original);
         outlineSR.color = original;
     }
 
