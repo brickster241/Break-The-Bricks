@@ -8,6 +8,8 @@ public class SquareBrickController : MonoBehaviour
 {
     SpriteRenderer sr;
     [SerializeField] bool isOscillating = false;
+    [SerializeField] float oscillate_dist;
+    [SerializeField] bool isOscillatingLeft;
     [SerializeField] float blockSpeed;
     [SerializeField] int hits;
     [SerializeField] SpriteRenderer outlineSR;
@@ -20,6 +22,12 @@ public class SquareBrickController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         darkerOutlineSR.color = (!isOscillating) ? Color.green : Color.blue;
         outlineSR.color = (!isOscillating) ? new Color(0.706f, 1f, 0.706f) : new Color(0.706f, 0.706f, 1f);    
+    }
+
+    private void Start() {
+        if (isOscillating) {
+            StartCoroutine(OscillateBrick(oscillate_dist, isOscillatingLeft));
+        }
     }
 
     // Update is called once per frame
@@ -43,11 +51,39 @@ public class SquareBrickController : MonoBehaviour
         outlineSR.color = (!isOscillating) ? new Color(0.706f, 1f, 0.706f) : new Color(0.706f, 0.706f, 1f);   
     }
 
+    IEnumerator OscillateBrick(float dist, bool isGoingLeft) {
+        
+        Vector2 leftTarget = new Vector2(transform.position.x - dist, transform.position.y);
+        Vector2 rightTarget = new Vector2(transform.position.x + dist, transform.position.y);
+        while (true) {
+            while (isGoingLeft && transform.position.x >= leftTarget.x) {
+                if (!levelTracker.isGamePaused) {
+                    Vector3 pos = transform.position;
+                    pos.x -= blockSpeed * Time.fixedDeltaTime;
+                    transform.position = pos;
+                    yield return new WaitForFixedUpdate();
+                }
+            }
+            isGoingLeft = false;
+            while (!isGoingLeft && transform.position.x <= rightTarget.x) {
+                if (!levelTracker.isGamePaused) {
+                    Vector3 pos = transform.position;
+                    pos.x += blockSpeed * Time.fixedDeltaTime;
+                    transform.position = pos;
+                    yield return new WaitForFixedUpdate();
+                }
+            }
+            isGoingLeft = true;
+        }
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Ball")) {
             hits -= 1;
             StartCoroutine(DisplayColor());
         } else if (other.gameObject.CompareTag("Game-Over")) {
+            Debug.Log("Game Over Now.");
             levelTracker.isGameOver = true;
         }
     }

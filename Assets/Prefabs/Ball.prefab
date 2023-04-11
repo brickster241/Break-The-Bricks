@@ -139,4 +139,5 @@ MonoBehaviour:
   X_BOUND: 20
   direction: {x: 0, y: 0}
   isTurnComplete: 0
+  levelTracker: {fileID: 0}
   speed: 30
