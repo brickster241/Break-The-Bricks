@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LevelTracker : MonoBehaviour
 {
+
     
     [SerializeField] int numberOfBricks;
     [SerializeField] SquareBrickController[] bricks;
     [SerializeField] BallLauncher ballManager;
     public bool isDecreasedHeight = false;
+    public bool isGameOver = false;
+    public bool isGameComplete = false;
+    public bool isGamePaused = false;
 
     void NextLevel() {
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
@@ -17,15 +21,21 @@ public class LevelTracker : MonoBehaviour
 
     private void Start() {
         numberOfBricks = bricks.Length;
+        isGameOver = false;
+        isGameComplete = false;
+        isGamePaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+            isGamePaused = true;
+        if (isGamePaused)
+            return;
         if (numberOfBricks == 0) {
-            NextLevel();
+            isGameComplete = true;
         }
-
         if (ballManager.allBallsFetched && !isDecreasedHeight) {
             isDecreasedHeight = true;
             foreach (SquareBrickController brick in bricks) {
@@ -38,6 +48,4 @@ public class LevelTracker : MonoBehaviour
     public void DecreaseBrickCount() {
         numberOfBricks -= 1;
     }
-
-
 }

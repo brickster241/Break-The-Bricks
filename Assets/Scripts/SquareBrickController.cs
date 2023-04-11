@@ -6,7 +6,6 @@ using TMPro;
 
 public class SquareBrickController : MonoBehaviour
 {
-    bool isGameOver = false;
     SpriteRenderer sr;
     [SerializeField] bool isOscillating = false;
     [SerializeField] float blockSpeed;
@@ -48,6 +47,8 @@ public class SquareBrickController : MonoBehaviour
         if (other.gameObject.CompareTag("Ball")) {
             hits -= 1;
             StartCoroutine(DisplayColor());
+        } else if (other.gameObject.CompareTag("Game-Over")) {
+            levelTracker.isGameOver = true;
         }
     }
 }

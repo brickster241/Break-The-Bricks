@@ -12,6 +12,7 @@ TagManager:
   - Square-Brick
   - Ball
   - Circle-Brick
+  - Game-Over
   layers:
   - Default
   - TransparentFX

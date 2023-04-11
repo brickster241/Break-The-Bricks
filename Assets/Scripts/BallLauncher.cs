@@ -18,7 +18,7 @@ public class BallLauncher : MonoBehaviour
         balls = new BallMovement[NumberOfBalls];
         for (int i = 0; i < NumberOfBalls; i++) {
             balls[i] = Instantiate(BallPrefab, BallParent).GetComponent<BallMovement>();
-            balls[i].SetHolder(transform);
+            balls[i].SetHolder(transform, levelTracker);
             balls[i].ResetBall();
         }
     }
@@ -30,6 +30,8 @@ public class BallLauncher : MonoBehaviour
     }
 
     private void Update() {
+        if (levelTracker.isGamePaused)
+            return;
         setBallsFetched();
         Mouse mouse = Mouse.current;
         Vector3 mousePosition = mouse.position.ReadValue();
@@ -42,15 +44,18 @@ public class BallLauncher : MonoBehaviour
         position.y = direction.y * 2;
         ArrowHead.localPosition = position;  
         if (mouse.leftButton.wasPressedThisFrame && allBallsFetched && ArrowHead.rotation.z > 0) {
-            StartCoroutine(setDirectionOfBalls(direction));
+            StartCoroutine(setDirectionOfBalls(mouse));
         }
     }
 
-    IEnumerator setDirectionOfBalls(Vector2 direction) {
+    IEnumerator setDirectionOfBalls(Mouse mouse) {
         allBallsFetched = false;
-        Debug.Log(direction);
         foreach (BallMovement mvt in balls)
         {
+            Vector3 mousePosition = mouse.position.ReadValue();
+            Vector3 worldPos = mainCamera.ScreenToWorldPoint(mousePosition);
+            worldPos.z = 0f;
+            Vector2 direction = new Vector2(worldPos.x - transform.position.x, worldPos.y - transform.position.y).normalized;    
             mvt.startMovement(direction);
             yield return new WaitForSeconds(0.2f);
         }

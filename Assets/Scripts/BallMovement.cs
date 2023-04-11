@@ -8,11 +8,13 @@ public class BallMovement : MonoBehaviour
     [SerializeField] float X_BOUND;
     [SerializeField] Vector2 direction;
     public bool isTurnComplete = true;
+    [SerializeField] LevelTracker levelTracker;
     [SerializeField] float speed;
     
 
-    public void SetHolder(Transform holder_transform) {
+    public void SetHolder(Transform holder_transform, LevelTracker levelTracker) {
         BALL_HOLDER = holder_transform;
+        this.levelTracker = levelTracker;
     }
 
     public void ResetBall() {
@@ -26,6 +28,8 @@ public class BallMovement : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        if (levelTracker.isGamePaused)
+            return;
         direction = direction.normalized;
         Vector3 pos = transform.position;
         pos.y += direction.y * speed * Time.fixedDeltaTime;
