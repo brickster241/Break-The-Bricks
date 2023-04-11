@@ -8,18 +8,18 @@ public class BallLauncher : MonoBehaviour
     [SerializeField] Transform ArrowHead;
     [SerializeField] Camera mainCamera;
     [SerializeField] int NumberOfBalls;
-    [SerializeField] GameObject[] balls;
+    [SerializeField] BallMovement[] balls;
     [SerializeField] GameObject BallPrefab;
     [SerializeField] Transform BallParent;
-    bool allBallsFetched;
+    [SerializeField] LevelTracker levelTracker;
+    public bool allBallsFetched;
 
     private void Awake() {
-        balls = new GameObject[NumberOfBalls];
+        balls = new BallMovement[NumberOfBalls];
         for (int i = 0; i < NumberOfBalls; i++) {
-            balls[i] = Instantiate(BallPrefab, BallParent);
-            BallMovement mvt = balls[i].GetComponent<BallMovement>();
-            mvt.SetHolder(transform);
-            mvt.ResetBall();
+            balls[i] = Instantiate(BallPrefab, BallParent).GetComponent<BallMovement>();
+            balls[i].SetHolder(transform);
+            balls[i].ResetBall();
         }
     }
 
@@ -49,18 +49,18 @@ public class BallLauncher : MonoBehaviour
     IEnumerator setDirectionOfBalls(Vector2 direction) {
         allBallsFetched = false;
         Debug.Log(direction);
-        foreach (GameObject ballMovt in balls)
+        foreach (BallMovement mvt in balls)
         {
-            BallMovement mvt = ballMovt.GetComponent<BallMovement>();
             mvt.startMovement(direction);
             yield return new WaitForSeconds(0.2f);
         }
+        levelTracker.isDecreasedHeight = false;
     }
 
+
     void setBallsFetched() {
-        foreach (GameObject ballMovt in balls)
+        foreach (BallMovement mvt in balls)
         {
-            BallMovement mvt = ballMovt.GetComponent<BallMovement>();
             if (!mvt.isTurnComplete) {
                 allBallsFetched = false;
                 return;

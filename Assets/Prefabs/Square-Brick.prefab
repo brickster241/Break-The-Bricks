@@ -495,6 +495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fef9096a2a6a9a4586806dc544ee92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOscillating: 0
+  blockSpeed: 10
   hits: 25
   outlineSR: {fileID: 2095270616}
+  darkerOutlineSR: {fileID: 8109539438062470926}
   brickText: {fileID: 8109539438695952319}
