@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Wall
   - Brick
+  - Top-Wall
+  - Ground
+  - Vertical-Wall
+  - Square-Brick
+  - Ball
   layers:
   - Default
   - TransparentFX
