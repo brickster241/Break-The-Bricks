@@ -8722,7 +8722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3429752aafe2549a2b2a65dfd38a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfBricks: 73
+  numberOfBricks: 76
   bricks:
   - {fileID: 1698407561}
   - {fileID: 1283695730}
@@ -8804,6 +8804,7 @@ MonoBehaviour:
   explosion_ps_green: {fileID: 6905474389767236772, guid: 876ad1f31f9a99344bf0eb1ac4e9a514, type: 3}
   explosion_ps_blue: {fileID: 2946695540193218123, guid: 9a427ab8700fc8141a44c596cd8bbdd3, type: 3}
   ballManager: {fileID: 148806754}
+  uIController: {fileID: 235753174}
   isDecreasedHeight: 0
   isGameOver: 0
   isGameComplete: 0

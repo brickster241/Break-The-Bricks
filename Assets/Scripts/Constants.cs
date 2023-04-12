@@ -24,7 +24,8 @@ public enum AudioType {
     LEVEL_COMPLETE,
     LEVEL_FAILED,
     LEVEL_PAUSED,
-    BRICK_HIT
+    BRICK_HIT,
+    BOMB_BRICK_EXPLOSION
 }
 
 public enum BrickType {

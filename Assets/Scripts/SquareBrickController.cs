@@ -21,6 +21,7 @@ public class SquareBrickController : MonoBehaviour
     [SerializeField] SpriteRenderer darkerOutlineSR;
     [SerializeField] TextMeshPro brickText;
     [SerializeField] LevelTracker levelTracker;
+    UIController uIController;
     ParticleSystem explosionPS;
 
     private void Awake() {
@@ -38,6 +39,7 @@ public class SquareBrickController : MonoBehaviour
 
     private void Start() {
         explosionPS = levelTracker.GetExplosionPSPrefab(brickType);
+        uIController = levelTracker.GetUIController();
         if (brickType == BrickType.OSCILLATING) {
             StartCoroutine(OscillateBrick(oscillate_dist, isOscillatingLeft));
         }
@@ -55,11 +57,17 @@ public class SquareBrickController : MonoBehaviour
     }
 
     public void DisableBrick() {
+        if (brickType == BrickType.BOMB)
+            AudioManager.Instance.PlayAudio(AudioType.BOMB_BRICK_EXPLOSION);
+        else
+            AudioManager.Instance.PlayAudio(AudioType.BRICK_EXPLOSION);
         Instantiate(explosionPS, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         for (int i = 0; i < neighbourBricks.Length; i++) {
-            levelTracker.DecreaseBrickCount();
-            neighbourBricks[i].DisableBrick();
+            if (neighbourBricks[i].gameObject.activeInHierarchy) {
+                levelTracker.DecreaseBrickCount();
+                neighbourBricks[i].DisableBrick();
+            }
         }
     }
 
@@ -91,8 +99,8 @@ public class SquareBrickController : MonoBehaviour
                     Vector3 pos = transform.position;
                     pos.x = pos.x - blockSpeed;
                     transform.position = pos;
-                    yield return new WaitForFixedUpdate();
                 }
+                yield return new WaitForFixedUpdate();
             }
             isGoingLeft = false;
             while (!isGoingLeft && transform.position.x <= rightTarget.x) {
@@ -100,8 +108,8 @@ public class SquareBrickController : MonoBehaviour
                     Vector3 pos = transform.position;
                     pos.x = pos.x + blockSpeed;
                     transform.position = pos;
-                    yield return new WaitForFixedUpdate();
                 }
+                yield return new WaitForFixedUpdate();
             }
             isGoingLeft = true;
         }
@@ -116,6 +124,7 @@ public class SquareBrickController : MonoBehaviour
         } else if (other.gameObject.CompareTag(Constants.GAME_OVER_TAG)) {
             Debug.Log("Game Over Now.");
             levelTracker.isGameOver = true;
+            uIController.DisplayGameFailed();
         }
     }
 }
