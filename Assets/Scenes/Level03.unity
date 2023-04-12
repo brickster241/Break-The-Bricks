@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrowHead: {fileID: 210093973}
   mainCamera: {fileID: 1505972685}
-  NumberOfBalls: 40
+  NumberOfBalls: 50
   balls: []
   BallPrefab: {fileID: 4435548550353316618, guid: 04257051be6658f47b78967cf41f7d33, type: 3}
   BallParent: {fileID: 1853473194}
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.58786047, b: 0.65525836, a: 1}
+  m_Color: {r: 0.6509804, g: 0.9254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1930,7 +1930,7 @@ RectTransform:
   - {fileID: 2053144652}
   - {fileID: 1222416389}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1953,6 +1953,7 @@ MonoBehaviour:
   CompleteUI: {fileID: 1807673763}
   FailedUI: {fileID: 2053144651}
   levelTracker: {fileID: 1378923126}
+  isUIVisible: 0
 --- !u!1001 &237119505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3958,7 +3959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.58786047, b: 0.65525836, a: 1}
+  m_Color: {r: 0.6509804, g: 0.9254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4806,7 +4807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.58786047, b: 0.65525836, a: 1}
+  m_Color: {r: 0.6509804, g: 0.9254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4940,7 +4941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.58786047, b: 0.65525836, a: 1}
+  m_Color: {r: 0.6509804, g: 0.9254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5905,7 +5906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.58786047, b: 0.65525836, a: 1}
+  m_Color: {r: 0.6509804, g: 0.9254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6529,7 +6530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.58786047, b: 0.65525836, a: 1}
+  m_Color: {r: 0.6509804, g: 0.9254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8498,7 +8499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.58786047, b: 0.65525836, a: 1}
+  m_Color: {r: 0.6509804, g: 0.9254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8708,7 +8709,7 @@ Transform:
   - {fileID: 115939785}
   - {fileID: 175650437}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1378923126
 MonoBehaviour:
@@ -8722,7 +8723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3429752aafe2549a2b2a65dfd38a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfBricks: 73
+  numberOfBricks: 76
   bricks:
   - {fileID: 1698407561}
   - {fileID: 1283695730}
@@ -8804,6 +8805,7 @@ MonoBehaviour:
   explosion_ps_green: {fileID: 6905474389767236772, guid: 876ad1f31f9a99344bf0eb1ac4e9a514, type: 3}
   explosion_ps_blue: {fileID: 2946695540193218123, guid: 9a427ab8700fc8141a44c596cd8bbdd3, type: 3}
   ballManager: {fileID: 148806754}
+  uIController: {fileID: 235753174}
   isDecreasedHeight: 0
   isGameOver: 0
   isGameComplete: 0
@@ -9995,7 +9997,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1507615661
 PrefabInstance:
@@ -12014,7 +12016,7 @@ Transform:
   m_Children:
   - {fileID: 148806753}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1869879636 stripped
 MonoBehaviour:
@@ -12109,7 +12111,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1934455882 stripped
 MonoBehaviour:
@@ -13047,7 +13049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.58786047, b: 0.65525836, a: 1}
+  m_Color: {r: 0.6509804, g: 0.9254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

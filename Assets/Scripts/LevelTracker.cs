@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Level Tracker Class - Keeps track of all the bricks & level conditions.
 public class LevelTracker : MonoBehaviour
 {
 
@@ -13,6 +14,7 @@ public class LevelTracker : MonoBehaviour
     [SerializeField] ParticleSystem explosion_ps_green;
     [SerializeField] ParticleSystem explosion_ps_blue;
     [SerializeField] BallLauncher ballManager;
+    [SerializeField] UIController uIController;
     public bool isDecreasedHeight = false;
     public bool isGameOver = false;
     public bool isGameComplete = false;
@@ -20,6 +22,10 @@ public class LevelTracker : MonoBehaviour
 
     void NextLevel() {
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
+    }
+
+    public UIController GetUIController() {
+        return uIController;
     }
 
     private void Start() {
@@ -32,12 +38,16 @@ public class LevelTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) {
             isGamePaused = true;
+            uIController.DisplayGamePaused();
+        }
+            
         if (isGamePaused)
             return;
-        if (numberOfBricks == 0) {
+        if (numberOfBricks == 0 && !uIController.isUIVisible) {
             isGameComplete = true;
+            uIController.DisplayGameComplete();
             int currentLevel = SceneManager.GetActiveScene().buildIndex;
             int currMax = PlayerPrefs.GetInt("LEVEL", 1);
             PlayerPrefs.SetInt("LEVEL", Mathf.Max(currentLevel + 1, currMax));
@@ -51,6 +61,7 @@ public class LevelTracker : MonoBehaviour
         
     }
 
+    // Returns Particle System Prefab based on brickType.
     public ParticleSystem GetExplosionPSPrefab(BrickType brickType) {
         if (brickType == BrickType.OSCILLATING) {
             return explosion_ps_blue;
@@ -61,6 +72,7 @@ public class LevelTracker : MonoBehaviour
         }
     }
 
+    // Decreases Brick Count.
     public void DecreaseBrickCount() {
         numberOfBricks -= 1;
     }

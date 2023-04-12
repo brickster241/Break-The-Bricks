@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Class Responsible for Movement for Ball.
 public class BallMovement : MonoBehaviour
 {
     Transform BALL_HOLDER;
@@ -12,16 +13,19 @@ public class BallMovement : MonoBehaviour
     [SerializeField] float speed;
     
 
+    // Sets Values for LevelTracker & Holder.
     public void SetHolder(Transform holder_transform, LevelTracker levelTracker) {
         BALL_HOLDER = holder_transform;
         this.levelTracker = levelTracker;
     }
 
+    // Resets Ball Position after a turn.
     public void ResetBall() {
         isTurnComplete = true;
         transform.position = BALL_HOLDER.position;
     }
 
+    // Starts Ball Movement.
     public void startMovement(Vector2 direction) {
         this.direction = direction;
         isTurnComplete = false;
@@ -56,21 +60,23 @@ public class BallMovement : MonoBehaviour
         
     }
 
+    // Checks and Updates Direction Based on Collision.
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("Tag : " + other.gameObject.tag);
-        if (other.gameObject.CompareTag("Top-Wall")) {
+        if (other.gameObject.CompareTag(Constants.TOP_WALL_TAG)) {
             direction.y = -direction.y;
-        } else if (other.gameObject.CompareTag("Vertical-Wall")) {
+        } else if (other.gameObject.CompareTag(Constants.VERTICAL_WALL_TAG)) {
             direction.x = -direction.x;
-        } else if (other.gameObject.CompareTag("Square-Brick")) {
+        } else if (other.gameObject.CompareTag(Constants.SQUARE_BRICK_TAG)) {
             // HANDLE SQUARE BRICK
             HandleSquareBrickCollision(other.gameObject);
-        } else if (other.gameObject.CompareTag("Ground")) {
+        } else if (other.gameObject.CompareTag(Constants.GROUND_TAG)) {
             // HANDLE GROUND
             StartCoroutine(BackToHolder());
         }
     }
 
+    // Handles Collision with Bricks and changes direction.
     void HandleSquareBrickCollision(GameObject brick) {
         // FIND A WAY TO DETECT SIDES AND MAKE CHANGES ACCORDINGLY.
         // USE CROSS PRODUCT - FIND RIGHT DIAGONAL & LEFT DIAGONAL VECTOR
@@ -98,12 +104,13 @@ public class BallMovement : MonoBehaviour
         direction = direction.normalized;
     }
 
+    // Checks if a point C is left to a vector AB.
     bool IsLeft(Vector2 AB, Vector2 CB)
     {
         return (-AB.x * CB.y + AB.y * CB.x < 0);
     }
 
-
+    // Fetches all Balls to Holder once they reach ground.
     IEnumerator BackToHolder() {
         while (transform.position != BALL_HOLDER.position) {
             direction = Vector2.zero;

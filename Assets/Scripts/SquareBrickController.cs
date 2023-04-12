@@ -4,14 +4,7 @@ using UnityEngine;
 using TMPro;
 
 
-public enum BrickType {
-    OSCILLATING,
-    NONOSCILLATING,
-    BOMB
-}
-
-// CONVERT IT TO 3 BRICK TYPES
-
+// SquareBrickController - Controller Class for Brick.
 public class SquareBrickController : MonoBehaviour
 {
     SpriteRenderer sr;
@@ -25,23 +18,25 @@ public class SquareBrickController : MonoBehaviour
     [SerializeField] SpriteRenderer darkerOutlineSR;
     [SerializeField] TextMeshPro brickText;
     [SerializeField] LevelTracker levelTracker;
+    UIController uIController;
     ParticleSystem explosionPS;
 
     private void Awake() {
         sr = GetComponent<SpriteRenderer>();
         if (brickType == BrickType.OSCILLATING) {
             brickText.text = hits.ToString();
-            darkerOutlineSR.color = Color.blue;
-            outlineSR.color = new Color(0.706f, 0.706f, 1f);
+            darkerOutlineSR.color = Constants.OSCILLATING_BRICK_COLOR;
+            outlineSR.color = Constants.OSCILLATING_OUTLINE_ORIGINAL_COLOR;
         } else if (brickType == BrickType.NONOSCILLATING) {
             brickText.text = hits.ToString();
-            darkerOutlineSR.color = Color.green;
-            outlineSR.color = new Color(0.706f, 1f, 0.706f);
+            darkerOutlineSR.color = Constants.NON_OSCILLATING_BRICK_COLOR;
+            outlineSR.color = Constants.NON_OSCILLATING_OUTLINE_ORIGINAL_COLOR;
         }    
     }
 
     private void Start() {
         explosionPS = levelTracker.GetExplosionPSPrefab(brickType);
+        uIController = levelTracker.GetUIController();
         if (brickType == BrickType.OSCILLATING) {
             StartCoroutine(OscillateBrick(oscillate_dist, isOscillatingLeft));
         }
@@ -58,33 +53,43 @@ public class SquareBrickController : MonoBehaviour
             brickText.text = hits.ToString();
     }
 
+    // Disables The Brick and adds Particle System Effect.
     public void DisableBrick() {
+        if (brickType == BrickType.BOMB)
+            AudioManager.Instance.PlayAudio(AudioType.BOMB_BRICK_EXPLOSION);
+        else
+            AudioManager.Instance.PlayAudio(AudioType.BRICK_EXPLOSION);
         Instantiate(explosionPS, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         for (int i = 0; i < neighbourBricks.Length; i++) {
-            levelTracker.DecreaseBrickCount();
-            neighbourBricks[i].DisableBrick();
+            if (neighbourBricks[i].gameObject.activeInHierarchy) {
+                levelTracker.DecreaseBrickCount();
+                neighbourBricks[i].DisableBrick();
+            }
         }
     }
 
+    // Decreases Y position of Brick.
     public void decreaseHeight() {
         transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0f);
     }
 
+    // Displays Blink Effect when Ball Hits the brick.
     IEnumerator DisplayColor() {
         if (brickType == BrickType.OSCILLATING) {
-            outlineSR.color = new Color(0.9f, 0.9f, 1f);
+            outlineSR.color = Constants.OSCILLATING_OUTLINE_BLINK_COLOR;
         } else if (brickType == BrickType.NONOSCILLATING) {
-            outlineSR.color = new Color(0.9f, 1f, 0.9f);
+            outlineSR.color = Constants.NON_OSCILLATING_OUTLINE_BLINK_COLOR;
         }
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(Constants.DISPLAY_BLINK_BRICK_INTERVAL);
         if (brickType == BrickType.OSCILLATING) {
-            outlineSR.color = new Color(0.706f, 0.706f, 1f);
+            outlineSR.color = Constants.OSCILLATING_OUTLINE_ORIGINAL_COLOR;
         } else if (brickType == BrickType.NONOSCILLATING) {
-            outlineSR.color = new Color(0.706f, 1f, 0.706f);
+            outlineSR.color = Constants.NON_OSCILLATING_OUTLINE_ORIGINAL_COLOR;
         }
     }
 
+    // Oscillates the Brick if brickType is OSCILLATING.
     IEnumerator OscillateBrick(float dist, bool isGoingLeft) {
         
         Vector2 leftTarget = new Vector2(transform.position.x - dist, transform.position.y);
@@ -95,8 +100,8 @@ public class SquareBrickController : MonoBehaviour
                     Vector3 pos = transform.position;
                     pos.x = pos.x - blockSpeed;
                     transform.position = pos;
-                    yield return new WaitForFixedUpdate();
                 }
+                yield return new WaitForFixedUpdate();
             }
             isGoingLeft = false;
             while (!isGoingLeft && transform.position.x <= rightTarget.x) {
@@ -104,8 +109,8 @@ public class SquareBrickController : MonoBehaviour
                     Vector3 pos = transform.position;
                     pos.x = pos.x + blockSpeed;
                     transform.position = pos;
-                    yield return new WaitForFixedUpdate();
                 }
+                yield return new WaitForFixedUpdate();
             }
             isGoingLeft = true;
         }
@@ -113,12 +118,14 @@ public class SquareBrickController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Ball")) {
+        if (other.gameObject.CompareTag(Constants.BALL_TAG)) {
+            AudioManager.Instance.PlayAudio(AudioType.BRICK_HIT);
             hits -= 1;
             StartCoroutine(DisplayColor());
-        } else if (other.gameObject.CompareTag("Game-Over")) {
+        } else if (other.gameObject.CompareTag(Constants.GAME_OVER_TAG)) {
             Debug.Log("Game Over Now.");
             levelTracker.isGameOver = true;
+            uIController.DisplayGameFailed();
         }
     }
 }
