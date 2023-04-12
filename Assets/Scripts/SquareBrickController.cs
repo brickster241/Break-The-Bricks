@@ -4,10 +4,19 @@ using UnityEngine;
 using TMPro;
 
 
+public enum BrickType {
+    OSCILLATING,
+    NONOSCILLATING,
+    BOMB
+}
+
+// CONVERT IT TO 3 BRICK TYPES
+
 public class SquareBrickController : MonoBehaviour
 {
     SpriteRenderer sr;
-    [SerializeField] bool isOscillating = false;
+    public BrickType brickType;
+    [SerializeField] SquareBrickController[] neighbourBricks;
     [SerializeField] float oscillate_dist;
     [SerializeField] bool isOscillatingLeft;
     [SerializeField] float blockSpeed;
@@ -18,14 +27,20 @@ public class SquareBrickController : MonoBehaviour
     [SerializeField] LevelTracker levelTracker;
 
     private void Awake() {
-        brickText.text = hits.ToString();
         sr = GetComponent<SpriteRenderer>();
-        darkerOutlineSR.color = (!isOscillating) ? Color.green : Color.blue;
-        outlineSR.color = (!isOscillating) ? new Color(0.706f, 1f, 0.706f) : new Color(0.706f, 0.706f, 1f);    
+        if (brickType == BrickType.OSCILLATING) {
+            brickText.text = hits.ToString();
+            darkerOutlineSR.color = Color.blue;
+            outlineSR.color = new Color(0.706f, 0.706f, 1f);
+        } else if (brickType == BrickType.NONOSCILLATING) {
+            brickText.text = hits.ToString();
+            darkerOutlineSR.color = Color.green;
+            outlineSR.color = new Color(0.706f, 1f, 0.706f);
+        }    
     }
 
     private void Start() {
-        if (isOscillating) {
+        if (brickType == BrickType.OSCILLATING) {
             StartCoroutine(OscillateBrick(oscillate_dist, isOscillatingLeft));
         }
     }
@@ -35,10 +50,18 @@ public class SquareBrickController : MonoBehaviour
     {
         if (hits <= 0) {
             levelTracker.DecreaseBrickCount();
-            gameObject.SetActive(false);
+            DisableBrick();
+        } 
+        if (brickType != BrickType.BOMB) 
+            brickText.text = hits.ToString();
+    }
+
+    public void DisableBrick() {
+        gameObject.SetActive(false);
+        for (int i = 0; i < neighbourBricks.Length; i++) {
+            levelTracker.DecreaseBrickCount();
+            neighbourBricks[i].DisableBrick();
         }
-            
-        brickText.text = hits.ToString();
     }
 
     public void decreaseHeight() {
@@ -46,9 +69,17 @@ public class SquareBrickController : MonoBehaviour
     }
 
     IEnumerator DisplayColor() {
-        outlineSR.color = (!isOscillating) ? new Color(0.9f, 1f, 0.9f) : new Color(0.9f, 0.9f, 1f);
+        if (brickType == BrickType.OSCILLATING) {
+            outlineSR.color = new Color(0.9f, 0.9f, 1f);
+        } else if (brickType == BrickType.NONOSCILLATING) {
+            outlineSR.color = new Color(0.9f, 1f, 0.9f);
+        }
         yield return new WaitForSeconds(0.1f);
-        outlineSR.color = (!isOscillating) ? new Color(0.706f, 1f, 0.706f) : new Color(0.706f, 0.706f, 1f);   
+        if (brickType == BrickType.OSCILLATING) {
+            outlineSR.color = new Color(0.706f, 0.706f, 1f);
+        } else if (brickType == BrickType.NONOSCILLATING) {
+            outlineSR.color = new Color(0.706f, 1f, 0.706f);
+        }
     }
 
     IEnumerator OscillateBrick(float dist, bool isGoingLeft) {

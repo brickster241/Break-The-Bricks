@@ -151,6 +151,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -250,6 +254,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -355,6 +363,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -454,6 +466,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -567,6 +583,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -730,6 +750,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -917,6 +941,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -1152,6 +1180,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -1330,7 +1362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowHead: {fileID: 210093973}
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 1505972685}
   NumberOfBalls: 40
   balls: []
   BallPrefab: {fileID: 4435548550353316618, guid: 04257051be6658f47b78967cf41f7d33, type: 3}
@@ -1627,8 +1659,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
@@ -1721,6 +1757,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -1941,6 +1981,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -2038,6 +2082,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -2132,6 +2180,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -2248,6 +2300,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -2345,6 +2401,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -2439,6 +2499,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -2671,6 +2735,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -2927,6 +2995,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -3026,6 +3098,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -3131,6 +3207,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -3225,6 +3305,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -3552,6 +3636,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -3923,6 +4011,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -4033,6 +4125,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -4278,6 +4374,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -4383,6 +4483,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -4554,6 +4658,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 204051087782368163, guid: 1037bbdcb843d5d48bec8a59d30d62f7, type: 3}
   m_PrefabInstance: {fileID: 739608241}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &739608243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 204051087782368156, guid: 1037bbdcb843d5d48bec8a59d30d62f7, type: 3}
+  m_PrefabInstance: {fileID: 739608241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &739608244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739608243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fef9096a2a6a9a4586806dc544ee92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickType: 2
+  neighbourBricks:
+  - {fileID: 2038405677}
+  - {fileID: 721065986}
+  - {fileID: 1221144792}
+  - {fileID: 1744995332}
+  - {fileID: 652356335}
+  - {fileID: 1652621634}
+  - {fileID: 439564491}
+  - {fileID: 1698407561}
+  - {fileID: 1283695730}
+  - {fileID: 62900515}
+  - {fileID: 286623797}
+  - {fileID: 1584136039}
+  oscillate_dist: 0
+  isOscillatingLeft: 0
+  blockSpeed: 0
+  hits: 1
+  outlineSR: {fileID: 0}
+  darkerOutlineSR: {fileID: 0}
+  brickText: {fileID: 0}
+  levelTracker: {fileID: 1378923126}
 --- !u!1 &745087866
 GameObject:
   m_ObjectHideFlags: 0
@@ -4850,6 +4993,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -4944,6 +5091,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -5184,6 +5335,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -5278,6 +5433,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -5396,6 +5555,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -5541,6 +5704,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -6015,6 +6182,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -6112,8 +6283,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
@@ -6407,8 +6582,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
@@ -6761,8 +6940,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
@@ -6871,6 +7054,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -7070,6 +7257,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -7441,6 +7632,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -7562,6 +7757,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -7813,6 +8012,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -7939,6 +8142,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1037bbdcb843d5d48bec8a59d30d62f7, type: 3}
+--- !u!1 &1305801316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 204051087782368156, guid: 1037bbdcb843d5d48bec8a59d30d62f7, type: 3}
+  m_PrefabInstance: {fileID: 1305801315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1305801317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305801316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fef9096a2a6a9a4586806dc544ee92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickType: 2
+  neighbourBricks:
+  - {fileID: 577190389}
+  - {fileID: 1347428303}
+  - {fileID: 1418816260}
+  - {fileID: 1350328618}
+  - {fileID: 1815594637}
+  - {fileID: 704113832}
+  - {fileID: 472762615}
+  - {fileID: 1194479478}
+  - {fileID: 2108195543}
+  - {fileID: 611300970}
+  - {fileID: 352126063}
+  - {fileID: 1478797178}
+  oscillate_dist: 0
+  isOscillatingLeft: 0
+  blockSpeed: 0
+  hits: 1
+  outlineSR: {fileID: 0}
+  darkerOutlineSR: {fileID: 0}
+  brickText: {fileID: 0}
+  levelTracker: {fileID: 1378923126}
 --- !u!1001 &1309596390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7964,6 +8206,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -8093,6 +8339,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1037bbdcb843d5d48bec8a59d30d62f7, type: 3}
+--- !u!1 &1310700753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 204051087782368156, guid: 1037bbdcb843d5d48bec8a59d30d62f7, type: 3}
+  m_PrefabInstance: {fileID: 1310700752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1310700754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310700753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fef9096a2a6a9a4586806dc544ee92a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brickType: 2
+  neighbourBricks:
+  - {fileID: 1664946704}
+  - {fileID: 1799729468}
+  - {fileID: 1725230698}
+  - {fileID: 1139969562}
+  - {fileID: 1262703880}
+  - {fileID: 1879561452}
+  - {fileID: 2113867681}
+  - {fileID: 1081076761}
+  - {fileID: 2060407314}
+  - {fileID: 1691451009}
+  - {fileID: 1934455882}
+  - {fileID: 2133587605}
+  oscillate_dist: 0
+  isOscillatingLeft: 0
+  blockSpeed: 0
+  hits: 1
+  outlineSR: {fileID: 0}
+  darkerOutlineSR: {fileID: 0}
+  brickText: {fileID: 0}
+  levelTracker: {fileID: 1378923126}
 --- !u!114 &1317057575 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -8266,8 +8551,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
@@ -8508,6 +8797,9 @@ MonoBehaviour:
   - {fileID: 582406783}
   - {fileID: 1051908005}
   - {fileID: 1700373126}
+  - {fileID: 739608244}
+  - {fileID: 1310700754}
+  - {fileID: 1305801317}
   ballManager: {fileID: 148806754}
   isDecreasedHeight: 0
   isGameOver: 0
@@ -8565,6 +8857,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -8662,6 +8958,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -8873,6 +9173,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -8986,6 +9290,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -9083,6 +9391,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -9177,6 +9489,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -9314,6 +9630,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -9408,6 +9728,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -9510,6 +9834,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -9691,6 +10019,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -9902,6 +10234,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -10048,6 +10384,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -10142,6 +10482,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -10258,6 +10602,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -10363,6 +10711,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -10476,6 +10828,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -10605,6 +10961,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -10797,6 +11157,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -10907,6 +11271,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -11109,6 +11477,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -11233,6 +11605,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -11327,6 +11703,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -11427,6 +11807,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -11521,6 +11905,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -11756,6 +12144,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -12002,6 +12394,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -12221,6 +12617,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -12318,6 +12718,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
       value: 0.01
       objectReference: {fileID: 0}
@@ -12412,6 +12816,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: isBlue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
@@ -12689,8 +13097,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
+      propertyPath: brickType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 0.01
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
