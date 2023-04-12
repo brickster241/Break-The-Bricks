@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
+// Singleton class for Managing Audio.
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set;}
@@ -25,15 +25,13 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start() {
-        // Instance.PlayAudio(AudioType.MAIN_MENU);
-    }
-
+    // Play Audio of Given AudioType.
     public void PlayAudio(AudioType audioType) {
         AudioInfo soundInfo = Array.Find(sounds, item => item.audioType == audioType);
         soundInfo.audioSource.Play();
     }
 
+    // Stop Audio of Given AudioType.
     public void StopAudio(AudioType audioType) {
         AudioInfo soundInfo = Array.Find(sounds, item => item.audioType == audioType);
         soundInfo.audioSource.Stop();

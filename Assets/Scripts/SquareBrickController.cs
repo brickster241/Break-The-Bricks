@@ -4,10 +4,7 @@ using UnityEngine;
 using TMPro;
 
 
-
-
-// CONVERT IT TO 3 BRICK TYPES
-
+// SquareBrickController - Controller Class for Brick.
 public class SquareBrickController : MonoBehaviour
 {
     SpriteRenderer sr;
@@ -56,6 +53,7 @@ public class SquareBrickController : MonoBehaviour
             brickText.text = hits.ToString();
     }
 
+    // Disables The Brick and adds Particle System Effect.
     public void DisableBrick() {
         if (brickType == BrickType.BOMB)
             AudioManager.Instance.PlayAudio(AudioType.BOMB_BRICK_EXPLOSION);
@@ -71,10 +69,12 @@ public class SquareBrickController : MonoBehaviour
         }
     }
 
+    // Decreases Y position of Brick.
     public void decreaseHeight() {
         transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0f);
     }
 
+    // Displays Blink Effect when Ball Hits the brick.
     IEnumerator DisplayColor() {
         if (brickType == BrickType.OSCILLATING) {
             outlineSR.color = Constants.OSCILLATING_OUTLINE_BLINK_COLOR;
@@ -89,6 +89,7 @@ public class SquareBrickController : MonoBehaviour
         }
     }
 
+    // Oscillates the Brick if brickType is OSCILLATING.
     IEnumerator OscillateBrick(float dist, bool isGoingLeft) {
         
         Vector2 leftTarget = new Vector2(transform.position.x - dist, transform.position.y);

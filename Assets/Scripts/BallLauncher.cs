@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// Class which keeps track of all the Balls.
 public class BallLauncher : MonoBehaviour
 {
     [SerializeField] Transform ArrowHead;
@@ -48,6 +49,7 @@ public class BallLauncher : MonoBehaviour
         }
     }
 
+    // Sets Direction of Balls based on Mouse Position.
     IEnumerator setDirectionOfBalls(Mouse mouse) {
         allBallsFetched = false;
         foreach (BallMovement mvt in balls)
@@ -62,7 +64,7 @@ public class BallLauncher : MonoBehaviour
         levelTracker.isDecreasedHeight = false;
     }
 
-
+    // Checks if ALL Balls are back to Launcher.
     void setBallsFetched() {
         foreach (BallMovement mvt in balls)
         {

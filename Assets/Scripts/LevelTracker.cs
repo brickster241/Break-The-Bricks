@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Level Tracker Class - Keeps track of all the bricks & level conditions.
 public class LevelTracker : MonoBehaviour
 {
 
@@ -60,6 +61,7 @@ public class LevelTracker : MonoBehaviour
         
     }
 
+    // Returns Particle System Prefab based on brickType.
     public ParticleSystem GetExplosionPSPrefab(BrickType brickType) {
         if (brickType == BrickType.OSCILLATING) {
             return explosion_ps_blue;
@@ -70,6 +72,7 @@ public class LevelTracker : MonoBehaviour
         }
     }
 
+    // Decreases Brick Count.
     public void DecreaseBrickCount() {
         numberOfBricks -= 1;
     }
