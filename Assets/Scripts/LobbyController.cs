@@ -36,28 +36,33 @@ public class LobbyController : MonoBehaviour
     }
 
     public void OnLevelButtonClick(string levelName) {
+        AudioManager.Instance.PlayAudio(AudioType.BUTTON_CLICK);
         SceneManager.LoadScene(levelName);
     }
 
     public void OnBackButtonClick() {
+        AudioManager.Instance.PlayAudio(AudioType.BUTTON_CLICK);
         HowToPlayUI.SetActive(false);
         LevelSelectUI.SetActive(false);
         MainMenuUI.SetActive(true);
     }
 
     public void OnHowToPlayButtonClick() {
+        AudioManager.Instance.PlayAudio(AudioType.BUTTON_CLICK);
         LevelSelectUI.SetActive(false);
         MainMenuUI.SetActive(false);
         HowToPlayUI.SetActive(true);
     }
 
     public void OnStartButtonClick() {
+        AudioManager.Instance.PlayAudio(AudioType.BUTTON_CLICK);
         HowToPlayUI.SetActive(false);
         MainMenuUI.SetActive(false);
         LevelSelectUI.SetActive(true);
     }
 
     public void OnQuitButtonClick() {
+        AudioManager.Instance.PlayAudio(AudioType.BUTTON_CLICK);
         Application.Quit();
     }
 }

@@ -110,6 +110,7 @@ public class SquareBrickController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag(Constants.BALL_TAG)) {
+            AudioManager.Instance.PlayAudio(AudioType.BRICK_HIT);
             hits -= 1;
             StartCoroutine(DisplayColor());
         } else if (other.gameObject.CompareTag(Constants.GAME_OVER_TAG)) {
