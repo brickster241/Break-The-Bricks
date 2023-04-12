@@ -57,7 +57,7 @@ public class BallLauncher : MonoBehaviour
             worldPos.z = 0f;
             Vector2 direction = new Vector2(worldPos.x - transform.position.x, worldPos.y - transform.position.y).normalized;    
             mvt.startMovement(direction);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(Constants.SET_DIRECTION_BALLS_INTERVAL);
         }
         levelTracker.isDecreasedHeight = false;
     }

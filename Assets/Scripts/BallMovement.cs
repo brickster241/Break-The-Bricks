@@ -58,14 +58,14 @@ public class BallMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("Tag : " + other.gameObject.tag);
-        if (other.gameObject.CompareTag("Top-Wall")) {
+        if (other.gameObject.CompareTag(Constants.TOP_WALL_TAG)) {
             direction.y = -direction.y;
-        } else if (other.gameObject.CompareTag("Vertical-Wall")) {
+        } else if (other.gameObject.CompareTag(Constants.VERTICAL_WALL_TAG)) {
             direction.x = -direction.x;
-        } else if (other.gameObject.CompareTag("Square-Brick")) {
+        } else if (other.gameObject.CompareTag(Constants.SQUARE_BRICK_TAG)) {
             // HANDLE SQUARE BRICK
             HandleSquareBrickCollision(other.gameObject);
-        } else if (other.gameObject.CompareTag("Ground")) {
+        } else if (other.gameObject.CompareTag(Constants.GROUND_TAG)) {
             // HANDLE GROUND
             StartCoroutine(BackToHolder());
         }

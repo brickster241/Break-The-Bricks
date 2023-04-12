@@ -4,11 +4,7 @@ using UnityEngine;
 using TMPro;
 
 
-public enum BrickType {
-    OSCILLATING,
-    NONOSCILLATING,
-    BOMB
-}
+
 
 // CONVERT IT TO 3 BRICK TYPES
 
@@ -31,12 +27,12 @@ public class SquareBrickController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         if (brickType == BrickType.OSCILLATING) {
             brickText.text = hits.ToString();
-            darkerOutlineSR.color = Color.blue;
-            outlineSR.color = new Color(0.706f, 0.706f, 1f);
+            darkerOutlineSR.color = Constants.OSCILLATING_BRICK_COLOR;
+            outlineSR.color = Constants.OSCILLATING_OUTLINE_ORIGINAL_COLOR;
         } else if (brickType == BrickType.NONOSCILLATING) {
             brickText.text = hits.ToString();
-            darkerOutlineSR.color = Color.green;
-            outlineSR.color = new Color(0.706f, 1f, 0.706f);
+            darkerOutlineSR.color = Constants.NON_OSCILLATING_BRICK_COLOR;
+            outlineSR.color = Constants.NON_OSCILLATING_OUTLINE_ORIGINAL_COLOR;
         }    
     }
 
@@ -73,15 +69,15 @@ public class SquareBrickController : MonoBehaviour
 
     IEnumerator DisplayColor() {
         if (brickType == BrickType.OSCILLATING) {
-            outlineSR.color = new Color(0.9f, 0.9f, 1f);
+            outlineSR.color = Constants.OSCILLATING_OUTLINE_BLINK_COLOR;
         } else if (brickType == BrickType.NONOSCILLATING) {
-            outlineSR.color = new Color(0.9f, 1f, 0.9f);
+            outlineSR.color = Constants.NON_OSCILLATING_OUTLINE_BLINK_COLOR;
         }
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(Constants.DISPLAY_BLINK_BRICK_INTERVAL);
         if (brickType == BrickType.OSCILLATING) {
-            outlineSR.color = new Color(0.706f, 0.706f, 1f);
+            outlineSR.color = Constants.OSCILLATING_OUTLINE_ORIGINAL_COLOR;
         } else if (brickType == BrickType.NONOSCILLATING) {
-            outlineSR.color = new Color(0.706f, 1f, 0.706f);
+            outlineSR.color = Constants.NON_OSCILLATING_OUTLINE_ORIGINAL_COLOR;
         }
     }
 
@@ -113,10 +109,10 @@ public class SquareBrickController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Ball")) {
+        if (other.gameObject.CompareTag(Constants.BALL_TAG)) {
             hits -= 1;
             StartCoroutine(DisplayColor());
-        } else if (other.gameObject.CompareTag("Game-Over")) {
+        } else if (other.gameObject.CompareTag(Constants.GAME_OVER_TAG)) {
             Debug.Log("Game Over Now.");
             levelTracker.isGameOver = true;
         }

@@ -20,7 +20,7 @@ public class LobbyController : MonoBehaviour
         for (int i = 0; i < levelButtons.Length; i++) {
             levelButtons[i].enabled = false;
             levelButtonImages[i] = levelButtons[i].GetComponent<Image>();
-            levelButtonImages[i].color = new Color(0.4f, 0.7f, 0.7f);
+            levelButtonImages[i].color = Constants.LEVEL_BUTTON_DISABLED_COLOR;
         }
             
     }
@@ -30,7 +30,7 @@ public class LobbyController : MonoBehaviour
     {
         for (int i = 0; i < Mathf.Min(PlayerPrefs.GetInt("LEVEL", 1), levels); i++) {
             levelButtons[i].enabled = true;
-            levelButtonImages[i].color = Color.yellow;
+            levelButtonImages[i].color = Constants.LEVEL_BUTTON_ENABLED_COLOR;
         }
             
     }
