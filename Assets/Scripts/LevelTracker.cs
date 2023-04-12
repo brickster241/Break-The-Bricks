@@ -9,6 +9,9 @@ public class LevelTracker : MonoBehaviour
     
     [SerializeField] int numberOfBricks;
     [SerializeField] SquareBrickController[] bricks;
+    [SerializeField] ParticleSystem explosion_ps_bomb;
+    [SerializeField] ParticleSystem explosion_ps_green;
+    [SerializeField] ParticleSystem explosion_ps_blue;
     [SerializeField] BallLauncher ballManager;
     public bool isDecreasedHeight = false;
     public bool isGameOver = false;
@@ -44,8 +47,18 @@ public class LevelTracker : MonoBehaviour
             foreach (SquareBrickController brick in bricks) {
                 brick.decreaseHeight();
             }
-        } 
+        }
         
+    }
+
+    public ParticleSystem GetExplosionPSPrefab(BrickType brickType) {
+        if (brickType == BrickType.OSCILLATING) {
+            return explosion_ps_blue;
+        } else if (brickType == BrickType.NONOSCILLATING) {
+            return explosion_ps_green;
+        } else {
+            return explosion_ps_bomb;
+        }
     }
 
     public void DecreaseBrickCount() {

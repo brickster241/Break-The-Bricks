@@ -25,6 +25,7 @@ public class SquareBrickController : MonoBehaviour
     [SerializeField] SpriteRenderer darkerOutlineSR;
     [SerializeField] TextMeshPro brickText;
     [SerializeField] LevelTracker levelTracker;
+    ParticleSystem explosionPS;
 
     private void Awake() {
         sr = GetComponent<SpriteRenderer>();
@@ -40,6 +41,7 @@ public class SquareBrickController : MonoBehaviour
     }
 
     private void Start() {
+        explosionPS = levelTracker.GetExplosionPSPrefab(brickType);
         if (brickType == BrickType.OSCILLATING) {
             StartCoroutine(OscillateBrick(oscillate_dist, isOscillatingLeft));
         }
@@ -57,6 +59,7 @@ public class SquareBrickController : MonoBehaviour
     }
 
     public void DisableBrick() {
+        Instantiate(explosionPS, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         for (int i = 0; i < neighbourBricks.Length; i++) {
             levelTracker.DecreaseBrickCount();
