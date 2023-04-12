@@ -59,7 +59,7 @@ public class SquareBrickController : MonoBehaviour
             while (isGoingLeft && transform.position.x >= leftTarget.x) {
                 if (!levelTracker.isGamePaused) {
                     Vector3 pos = transform.position;
-                    pos.x -= blockSpeed * Time.fixedDeltaTime;
+                    pos.x = pos.x - blockSpeed;
                     transform.position = pos;
                     yield return new WaitForFixedUpdate();
                 }
@@ -68,7 +68,7 @@ public class SquareBrickController : MonoBehaviour
             while (!isGoingLeft && transform.position.x <= rightTarget.x) {
                 if (!levelTracker.isGamePaused) {
                     Vector3 pos = transform.position;
-                    pos.x += blockSpeed * Time.fixedDeltaTime;
+                    pos.x = pos.x + blockSpeed;
                     transform.position = pos;
                     yield return new WaitForFixedUpdate();
                 }

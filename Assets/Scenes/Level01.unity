@@ -2274,7 +2274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
@@ -2582,7 +2582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
@@ -3479,7 +3479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker
@@ -7141,7 +7141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: blockSpeed
-      value: 5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8109539439641855655, guid: b33beb6135576d74782f6fcac4e20ce0, type: 3}
       propertyPath: levelTracker

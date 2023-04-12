@@ -10,10 +10,12 @@ public class LobbyController : MonoBehaviour
     [SerializeField] GameObject LevelSelectUI;
     [SerializeField] Button[] levelButtons;
     Image[] levelButtonImages;
+    int levels;
     [SerializeField] GameObject HowToPlayUI;
     // Start is called before the first frame update
     void Start()
     {
+        levels = SceneManager.sceneCountInBuildSettings - 1;
         levelButtonImages = new Image[levelButtons.Length];
         for (int i = 0; i < levelButtons.Length; i++) {
             levelButtons[i].enabled = false;
@@ -26,7 +28,7 @@ public class LobbyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < PlayerPrefs.GetInt("LEVEL", 1); i++) {
+        for (int i = 0; i < Mathf.Min(PlayerPrefs.GetInt("LEVEL", 1), levels); i++) {
             levelButtons[i].enabled = true;
             levelButtonImages[i].color = Color.yellow;
         }

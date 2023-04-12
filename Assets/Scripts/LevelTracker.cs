@@ -35,6 +35,9 @@ public class LevelTracker : MonoBehaviour
             return;
         if (numberOfBricks == 0) {
             isGameComplete = true;
+            int currentLevel = SceneManager.GetActiveScene().buildIndex;
+            int currMax = PlayerPrefs.GetInt("LEVEL", 1);
+            PlayerPrefs.SetInt("LEVEL", Mathf.Max(currentLevel + 1, currMax));
         }
         if (ballManager.allBallsFetched && !isDecreasedHeight) {
             isDecreasedHeight = true;
