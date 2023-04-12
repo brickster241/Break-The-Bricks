@@ -496,8 +496,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOscillating: 0
-  blockSpeed: 10
+  oscillate_dist: 0
+  isOscillatingLeft: 0
+  blockSpeed: 0.01
   hits: 25
   outlineSR: {fileID: 2095270616}
   darkerOutlineSR: {fileID: 8109539438062470926}
   brickText: {fileID: 8109539438695952319}
+  levelTracker: {fileID: 0}
