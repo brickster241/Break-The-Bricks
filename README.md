@@ -1,3 +1,5 @@
+
+
 ## Break 'Em All
 
 - A modified clone of famous Break the bricks game.
@@ -12,3 +14,4 @@
 - Object Oriented Programming Paradigm maintained throughout the Project, clean & maintainable code.
 
 ### Demo
+https://user-images.githubusercontent.com/65897987/231685818-988c4efc-3fe7-416d-b46c-14d67ef03883.mp4
