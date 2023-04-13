@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - audioType: 7
-    audioClip: {fileID: 8300000, guid: e8cd50966c28e124cbd8d216cb8f589b, type: 3}
+    audioClip: {fileID: 8300000, guid: 2f1a2a810fa50c246bf9a769f440d818, type: 3}
     volume: 0.25
     loop: 0
     audioSource: {fileID: 0}
