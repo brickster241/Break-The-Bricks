@@ -6,6 +6,9 @@
 - Added 3 different types of bricks - Oscillating, Non-Oscillating & Bomb brick.
 - The Bomb brick , when hit explodes and affects all the neighbouring bricks.
 
+![Screenshot (57)](https://user-images.githubusercontent.com/65897987/231687231-86d32086-17f5-4ffe-9024-046c16e46972.png)
+
+
 ### Features
 - Complete Game Cycle : Main Menu, Game Pause, Level Complete, Level Failed, Level Unlocking System.
 - Particle System for explosions.
